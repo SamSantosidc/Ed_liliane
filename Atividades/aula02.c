@@ -8,5 +8,5 @@ int main(){
     *p = v; //Garante que eu não altere o vetor original
 
     //Aplicar algoritmo de ordenação, quero o InsertSorte
-
+    
 }

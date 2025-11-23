@@ -23,6 +23,7 @@ int main(){
     fputs(novo_texto, texto_teste);
 
     // Esse trecho le o conteudo do buffer e exibe (nesse caso, um texto[String])
+    memset(buffer, 0, sizeof(buffer));
     fgets(buffer, sizeof(buffer), texto_teste);
     printf("%s", buffer);
 
