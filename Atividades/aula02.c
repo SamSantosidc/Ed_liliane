@@ -1,36 +1,79 @@
 //Tarefa : Ordenar um vetor de 5 posições em uma função sem alterar o vetor original.
 #include <stdio.h>
 
+#define TAMANHDO_DO_VETOR 10
+
+void bubbleSort(int v[], int arrayLenght);
+void selectionSort(int v[], int arrayLenght);
+void insertionSort(int v[], int arrayLenght);
+
 int main(){
     
-    int v[5] = {7,1,9,6,5};
-    int vTamanho = sizeof(v) / sizeof(v[0]); // Calcula o tamanho do vetor;
-    int vCopia[5];                           // sizeOf(v) (5 ints → 5 × 4 bytes = 20 bytes)
-                                             // divide (/) por sizeOf(v[0]) 4 bytes: 20 / 4 = 5
-    // Faz uma cópia do vetor original
-    for (int a = 0; a < vTamanho; a++){
-        vCopia[a] = v[a];
+    int v[TAMANHDO_DO_VETOR] = {13,7,1,9,6,3,5,11,2,6};
+    int vCopia[TAMANHDO_DO_VETOR];
+    // int vTamanho = sizeof(v) / sizeof(v[0]);Calcula o tamanho do vetor; EX:
+                                            // sizeOf(v) (5 ints → 5 × 4 bytes = 20 bytes)
+                                            // divide (/) por sizeOf(v[0]) 4 bytes: 20 / 4 = 5
+    
+    for (int i = 0; i < TAMANHDO_DO_VETOR; i++){
+        vCopia[i] = v[i];
+    }
+    
+    selectionSort(vCopia, TAMANHDO_DO_VETOR);
+
+    for (int i = 0; i < TAMANHDO_DO_VETOR; i++){
+        printf("%d - ", vCopia[i]);
+    }
+}
+
+void bubbleSort(int v[], int arrayLenght){
+    int temp;
+
+    if (arrayLenght == 0){
+        printf("%s", "Vetor vazio");
     }
 
-    // Print de teste para ver se o vetor foi copiado corretamente
-    for (int b = 0; b < vTamanho; b++){
-        printf("%d - ", vCopia[b]);
-    }
+    // Aqui tinha um print de teste para ver se o vetor foi copiado corretamente
 
     // Bubble sort
-    int temp;
-    for (int i = 0; i < vTamanho - 1; i++){
-        for (int j = 0; j < vTamanho -1 -i; j++){
-            if (vCopia[j] > vCopia[j+1]){
-                temp = vCopia[j];
-                vCopia[j] = vCopia[j+1];
-                vCopia[j+1] = temp;
+    for (int i = 0; i < arrayLenght - 1; i++){
+        for (int j = 0; j < arrayLenght -1 -i; j++){
+            if (v[j] > v[j+1]){
+                temp = v[j];
+                v[j] = v[j+1];
+                v[j+1] = temp;
             } 
         }
     }
 
-    // Print para ver se o vetor foi organizado corretamente 
-    for (int c = 0; c < vTamanho; c++){
-        printf("%d - ", vCopia[c]);
-    }    
+    // Aqui tinha um print de teste para ver se o vetor foi ordenado corretamente
+
+}
+
+void selectionSort(int v[], int arrayLenght){
+    int temp;
+    int menor;
+
+    if (arrayLenght == 0){
+        printf("%s", "Vetor vazio");
+    }
+
+    for (int i = 0; i < arrayLenght; i++){
+        menor = i;
+        for (int j = i + 1; j < arrayLenght; j++){
+            if (v[j] < v[menor]){
+                menor = j;
+            }
+        }
+        temp = v[i];
+        v[i] = v[menor];
+        v[menor] = temp;
+    }
+
+    // Aqui tinha um print de teste para ver se o vetor foi ordenado corretamente
+
+}
+
+void insertionSort(int v[], int arrayLenght){
+
 }
