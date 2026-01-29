@@ -74,7 +74,7 @@ void selectionSort(int *p, int arrayLenght){
 
 }
 
-void insertionSort(int p*, int arrayLenght){
+void insertionSort(int *p, int arrayLenght){
 
 }
 
