@@ -4,9 +4,6 @@ Eficiencia = Rapidez;
              Segurança;
              Economia.
 
-Estrutura de dados = Organizar a informação da memória e acessar as informações da memória.
-Tipos: 
-Estruturas de dados *Estáticas* -> 
 
 # Bib iniciais
 Lembrar, sempre que for pensar em um código em C, usar as bibliotecas necessárias com o #include
@@ -191,6 +188,8 @@ Ex: Ponteiros simples (int *p)
 PI -> Não tem controle direito
 Ex: (int vetor[5] = {1,2,3,4,5}) 
 
+# Variáveis Estáticas
+
 # Struct
 Struct, em C, é um tipo. Ele agrupa informações que não tem o mesmo tipo mas tem o mesmo contexto.
 Exemplo:
@@ -211,7 +210,8 @@ Isso devolve uma resposta -> Sim ou Não
 O objetivo é evitar desperdício, reservando de acordo com a necessidade. É uma memoria alocada dinamicamente, não tem nome.
 Exemplo de aplicação:
 
-    Quando queremos guardar vetores de nomes
+Quando queremos guardar vetores de nomes
+
 # Mandamentos
 
 1 -> "Main deve ser finalizada com return 0";
