@@ -159,6 +159,37 @@ printf( "%d" , *p)
 Resumo/anotação mental: Primeiro usamos para declarar um ponteiro, fora desse cenário de declaração, ele se torna uma operação *CONTEUDO APONTADO POR _*
 
 ## Ponteiros como parametros de funções
+Para passar ponteiros em funções, você irá passar endereços de memórias, não necessariamente um ponteiro declarado.
+Exemplo:
+void funcaoTeste (int *p, int *s){
+    /* Bla bla bla...*/
+}
+
+int main(){
+    int a = 10;
+    int b = 5;
+
+    funcaoTeste(&a, &b);
+
+    return 0;
+}
+
+# Vetores
+Sequencia de campos em memória.
+Os elementos devem ter: O mesmo tipo;
+                        Mesma finalidade.
+
+É uma alocação sequencial.
+
+Sintáxe:
+int v [10];
+
+Em vetores podem ter dois tipos de ponteiros, os explicitos e os implicitos.
+PE -> Controle direto do endereço de memória.
+Ex: Ponteiros simples (int *p)
+
+PI -> Não tem controle direito
+Ex: (int vetor[5] = {1,2,3,4,5}) 
 
 # Struct
 Struct, em C, é um tipo. Ele agrupa informações que não tem o mesmo tipo mas tem o mesmo contexto.
@@ -186,20 +217,3 @@ Exemplo de aplicação:
 1 -> "Main deve ser finalizada com return 0";
 
 2 -> "Tu és eternamente responsável pela mémoria que alocas";
-
-# Vetores
-Sequencia de campos em memória.
-Os elementos devem ter: O mesmo tipo;
-                        Mesma finalidade.
-
-É uma alocação sequencial.
-
-Sintáxe:
-int v [10];
-
-Em vetores podem ter dois tipos de ponteiros, os explicitos e os implicitos.
-PE -> Controle direto do endereço de memória.
-Ex: Ponteiros simples (int *p)
-
-PI -> Não tem controle direito
-Ex: (int vetor[5] = {1,2,3,4,5}) 
