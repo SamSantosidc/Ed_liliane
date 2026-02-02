@@ -1,17 +1,20 @@
 # Conceitos base
+
 Eficiencia = Rapidez;
              Segurança;
              Economia.
 
-Estrutura de dados = Organizar a informação da memória;
-                     Acessar as informações da memória.
+Estrutura de dados = Organizar a informação da memória e acessar as informações da memória.
+Tipos: 
+Estruturas de dados *Estáticas* -> 
 
 # Bib iniciais
 Lembrar, sempre que for pensar em um código em C, usar as bibliotecas necessárias com o #include
 
     <stdio.h> -> Standart Input-Output Header. define funções, macros e variáveis essenciais para
                 operações de entrada e saída. Exemplos: printf() e scanf().
-    <>
+                
+    <string.h> -> 
 
     <>
 
@@ -54,23 +57,6 @@ Ela recebe um numero variável de parametros, dependendo do formatador utlizado,
     2 detalhes a se atentar: Utilizei o %.1f pois o %f por padrão exibe 6 casas deciamis, oque resultaria em 69.500000. E o uso da \n para os prints não ficarem colados um no outro, com uma visualização ruim.
 
     Nota mental: Uma opção válida é utilizar ponteiro para armazenar o nome char: char *nome = Samuel;
-
-# Vetores
-Sequencia de campos em memória.
-Os elementos devem ter: O mesmo tipo;
-                        Mesma finalidade.
-
-É uma alocação sequencial.
-
-Sintáxe:
-int v [10];
-
-Em vetores podem ter dois tipos de ponteiros, os explicitos e os implicitos.
-PE -> Controle direto do endereço de memória.
-Ex: Ponteiros simples (int *p)
-
-PI -> Não tem controle direito
-Ex: (int vetor[5] = {1,2,3,4,5}) 
 
 # Formas de percorrer um vetor
 ## While
@@ -149,6 +135,31 @@ int main() {
     return 0;
 }
 
+# Pilha de execução
+Funções seguem o comportamento de utilizar variaveis locais, temporarias, para posteriormente, apagalas. Como um esquema de pilha. 
+
+# Ponteiros
+Os ponteiros são variavéis que armazenam *endereços de memória*. Eles utilizam dois operadores unitários: & ("endereço de") e *("conteudo de")
+O que causa muita confusão sobre os ponteiros é que um mesmo operador, "*", tem significados diferrentes de acordo com a situação em que ele é utilizado.
+
+As situações são: *DECLARAÇÃO* e *OPERAÇÃO/EXPRESSÃO*
+
+Declaração: Etiqueta a variavel como um ponteiro de um determinado tipo.
+int *p;
+ou
+int *p = &a
+
+Operação e Expressão: Atua como uma operação APÓS o ponteiro ja ter sido declarado com o *p.
+int a = 5;
+int *p = &a;
+
+printf( "%d" , *p)
+/* Isso retornará o inteiro 5, o conteudo apontado por p */
+
+Resumo/anotação mental: Primeiro usamos para declarar um ponteiro, fora desse cenário de declaração, ele se torna uma operação *CONTEUDO APONTADO POR _*
+
+## Ponteiros como parametros de funções
+
 # Struct
 Struct, em C, é um tipo. Ele agrupa informações que não tem o mesmo tipo mas tem o mesmo contexto.
 Exemplo:
@@ -175,3 +186,20 @@ Exemplo de aplicação:
 1 -> "Main deve ser finalizada com return 0";
 
 2 -> "Tu és eternamente responsável pela mémoria que alocas";
+
+# Vetores
+Sequencia de campos em memória.
+Os elementos devem ter: O mesmo tipo;
+                        Mesma finalidade.
+
+É uma alocação sequencial.
+
+Sintáxe:
+int v [10];
+
+Em vetores podem ter dois tipos de ponteiros, os explicitos e os implicitos.
+PE -> Controle direto do endereço de memória.
+Ex: Ponteiros simples (int *p)
+
+PI -> Não tem controle direito
+Ex: (int vetor[5] = {1,2,3,4,5}) 
