@@ -29,9 +29,9 @@ vet[i] = vet[TAMANHO - 1- i]; vet[i](Primeiro elemento) recebe o ultimo elemento
 ve[TAMANHO -1 -i] = temp;  vet[TAMANHO -1 -i](Ultimo elemento) recebe o primeiro elemento
 */
 void inverte(int n, int* vet){
-    for (int i = 0; i < TAMANHO/2; i++){
+    for (int i = 0; i < n/2; i++){
         int temp = vet[i];
-        vet[i] = vet[TAMANHO - 1 - i];
-        vet[TAMANHO - 1 - i] = temp;      
+        vet[i] = vet[n - 1 - i];
+        vet[n - 1 - i] = temp;      
     }
 }
